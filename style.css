@@ -15,28 +15,33 @@ body {
   position: relative;
 }
 
+/* Background Animation */
 @keyframes neonBackground {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
+/* Fade In Animation */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* Pulse Animation for Neon Effect */
 @keyframes pulse {
   0% { box-shadow: var(--neon-shadow); }
   50% { box-shadow: 0 0 10px var(--neon-color), 0 0 25px var(--neon-color); }
   100% { box-shadow: var(--neon-shadow); }
 }
 
+/* Text Glow on Hover */
 @keyframes hoverGlow {
   0%, 100% { text-shadow: none; }
   50% { text-shadow: var(--neon-shadow); }
 }
 
+/* Header Styles */
 h1 {
   color: var(--neon-color);
   text-align: center;
@@ -46,6 +51,7 @@ h1 {
   margin-bottom: 30px;
 }
 
+/* Button Styles */
 button {
   background: var(--neon-color);
   border: none;
@@ -58,6 +64,7 @@ button {
   color: #000;
   display: block;
   animation: fadeIn 2s ease-in-out;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 button:hover {
@@ -65,12 +72,14 @@ button:hover {
   box-shadow: var(--neon-shadow);
 }
 
+/* Dashboard Styles */
 #dashboard {
   max-height: 75vh;
   overflow-y: auto;
   padding-right: 8px;
 }
 
+/* Card Styles */
 .card {
   background: rgba(20, 20, 20, 0.85);
   border: 2px solid var(--neon-color);
@@ -90,6 +99,7 @@ button:hover {
   box-shadow: 0 0 25px var(--neon-color), 0 0 50px var(--neon-color);
 }
 
+/* Label Styles */
 .label {
   font-size: 22px;
   color: var(--neon-color);
@@ -97,6 +107,7 @@ button:hover {
   animation: pulse 4s infinite;
 }
 
+/* Value Styles */
 .value {
   font-size: 30px;
   font-weight: bold;
@@ -104,6 +115,7 @@ button:hover {
   animation: hoverGlow 3s infinite;
 }
 
+/* Battery Container Styles */
 .battery-container {
   height: 20px;
   background: #333;
@@ -120,6 +132,7 @@ button:hover {
   transition: width 0.5s;
 }
 
+/* Canvas Styles */
 canvas {
   background: #111;
   border-radius: 12px;
@@ -129,6 +142,7 @@ canvas {
   animation: fadeIn 2s;
 }
 
+/* Modal Styles */
 .modal {
   display: none;
   position: fixed;
@@ -151,6 +165,7 @@ canvas {
   color: #fff;
 }
 
+/* Close Button Styles */
 .close-btn {
   position: absolute;
   top: 20px;
@@ -160,6 +175,7 @@ canvas {
   cursor: pointer;
 }
 
+/* Particle Animation */
 .particle {
   position: fixed;
   width: 2px;
