@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,3 +71,77 @@
   <script src="script.js"></script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>⚡ Footstep Energy Dashboard ⚡</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h1>⚡ Footstep Energy Dashboard ⚡</h1>
+  <!-- Updated Button -->
+  <button id="connectBtn">🔗 Connect to Arduino</button>
+
+  <div id="dashboard">
+
+    <div class="card" onclick="expandCard(this)">
+      <div class="label">👣 Steps</div>
+      <div class="value" id="steps">--</div>
+    </div>
+
+    <div class="card" onclick="expandCard(this)">
+      <div class="label">⚡ Voltage</div>
+      <div class="value" id="voltage">-- V</div>
+    </div>
+
+    <div class="card" onclick="expandCard(this)">
+      <div class="label">🔋 Battery Level</div>
+      <div class="value" id="battery">--%</div>
+      <div class="battery-container">
+        <div id="batteryBar"></div>
+      </div>
+    </div>
+
+    <div class="card" onclick="expandCard(this)">
+      <div class="label">⚙️ Energy Generated</div>
+      <div class="value" id="energy">-- J</div>
+    </div>
+
+    <div class="card" onclick="expandCard(this)">
+      <div class="label">🌱 CO₂ Saved</div>
+      <div class="value" id="co2">-- g</div>
+    </div>
+
+    <div class="card" onclick="expandCard(this)">
+      <div class="label">📈 Live Voltage Graph</div>
+      <canvas id="chart" height="200"></canvas>
+    </div>
+
+    <div class="card" onclick="expandCard(this)">
+      <div class="label">💡 LED Control</div>
+      <button onclick="sendToArduino('LED_ON'); event.stopPropagation();">Turn On LED</button>
+      <button onclick="sendToArduino('LED_OFF'); event.stopPropagation();">Turn Off LED</button>
+    </div>
+
+    <div class="card" onclick="expandCard(this)">
+      <div class="label">💬 Motivation</div>
+      <div class="value" id="motivation">Take 5 more steps to reach your goal!</div>
+    </div>
+
+  </div>
+
+  <div class="modal" id="modal" onclick="closeModal(event)">
+    <div class="modal-content" id="modalContent"></div>
+    <span class="close-btn" onclick="closeModal(event)">&times;</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+>>>>>>> 12e9484071e0c17b7236d25905f2ed3309b00cfd
