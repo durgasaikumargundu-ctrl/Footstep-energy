@@ -1,0 +1,177 @@
+:root {
+  --neon-color: #00ffe7;
+  --neon-shadow: 0 0 5px var(--neon-color), 0 0 10px var(--neon-color), 0 0 20px var(--neon-color);
+}
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  background: radial-gradient(circle at center, #0f0f0f, #1a1a1a);
+  background-size: 300% 300%;
+  animation: neonBackground 15s ease infinite, fadeIn 2s ease-in;
+  color: #fff;
+  margin: 0;
+  padding: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+@keyframes neonBackground {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { box-shadow: var(--neon-shadow); }
+  50% { box-shadow: 0 0 10px var(--neon-color), 0 0 25px var(--neon-color); }
+  100% { box-shadow: var(--neon-shadow); }
+}
+
+@keyframes hoverGlow {
+  0%, 100% { text-shadow: none; }
+  50% { text-shadow: var(--neon-shadow); }
+}
+
+h1 {
+  color: var(--neon-color);
+  text-align: center;
+  font-size: 2.8rem;
+  text-shadow: var(--neon-shadow);
+  animation: pulse 3s infinite ease-in-out;
+  margin-bottom: 30px;
+}
+
+button {
+  background: var(--neon-color);
+  border: none;
+  padding: 12px 25px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0 auto 25px auto;
+  color: #000;
+  display: block;
+  animation: fadeIn 2s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: var(--neon-shadow);
+}
+
+#dashboard {
+  max-height: 75vh;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.card {
+  background: rgba(20, 20, 20, 0.85);
+  border: 2px solid var(--neon-color);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px;
+  box-shadow: var(--neon-shadow);
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s;
+  animation: fadeIn 1s ease-in-out;
+  position: relative;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px var(--neon-color), 0 0 50px var(--neon-color);
+}
+
+.label {
+  font-size: 22px;
+  color: var(--neon-color);
+  margin-bottom: 10px;
+  animation: pulse 4s infinite;
+}
+
+.value {
+  font-size: 30px;
+  font-weight: bold;
+  color: #ffffff;
+  animation: hoverGlow 3s infinite;
+}
+
+.battery-container {
+  height: 20px;
+  background: #333;
+  border-radius: 10px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+#batteryBar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(to right, #00ffe7, #0077ff);
+  border-radius: 10px;
+  transition: width 0.5s;
+}
+
+canvas {
+  background: #111;
+  border-radius: 12px;
+  padding: 10px;
+  margin-top: 10px;
+  width: 100%;
+  animation: fadeIn 2s;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #111;
+  border: 2px solid var(--neon-color);
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 90%;
+  max-height: 90%;
+  overflow-y: auto;
+  color: #fff;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  color: var(--neon-color);
+  cursor: pointer;
+}
+
+.particle {
+  position: fixed;
+  width: 2px;
+  height: 2px;
+  background: var(--neon-color);
+  border-radius: 50%;
+  animation: particleMove linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes particleMove {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
+}
